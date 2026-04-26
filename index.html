@@ -1,0 +1,629 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RRU Trader HK | Global Telecom Equipment Supplier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        dark: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                linear-gradient(to bottom, #0f172a, #1e293b);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(14, 165, 233, 0.3);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .tech-grid {
+            background-image: 
+                linear-gradient(rgba(14, 165, 233, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(14, 165, 233, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-100 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-3 group cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 bg-gradient-to-br from-brand-500 to-indigo-600 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-brand-500/50 transition-shadow">
+                        <i class="fas fa-broadcast-tower text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-display font-bold text-xl tracking-tight text-white">RRU Trader <span class="text-brand-500">HK</span></h1>
+                        <p class="text-xs text-gray-400 tracking-wider">GLOBAL TELECOM SOLUTIONS</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#products" class="text-sm font-medium text-gray-300 hover:text-brand-400 transition-colors">Products</a>
+                    <a href="#about" class="text-sm font-medium text-gray-300 hover:text-brand-400 transition-colors">About</a>
+                    <a href="#services" class="text-sm font-medium text-gray-300 hover:text-brand-400 transition-colors">Services</a>
+                    <a href="#global" class="text-sm font-medium text-gray-300 hover:text-brand-400 transition-colors">Global Reach</a>
+                    <a href="#contact" class="px-6 py-2.5 bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-brand-500/25">
+                        Get Quote
+                    </a>
+                </div>
+
+                <button class="md:hidden text-gray-300 hover:text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-gray-800">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#products" class="block px-3 py-2 text-gray-300 hover:text-brand-400">Products</a>
+                <a href="#about" class="block px-3 py-2 text-gray-300 hover:text-brand-400">About</a>
+                <a href="#services" class="block px-3 py-2 text-gray-300 hover:text-brand-400">Services</a>
+                <a href="#contact" class="block px-3 py-2 text-brand-400 font-semibold">Get Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center hero-bg tech-grid overflow-hidden pt-20">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
+            <div class="absolute top-1/2 -left-20 w-72 h-72 bg-indigo-500/20 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 animate-fade-in-up">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-brand-900/50 border border-brand-500/30 text-brand-300 text-sm font-medium">
+                        <span class="w-2 h-2 bg-brand-400 rounded-full mr-2 animate-pulse"></span>
+                        Based in Indonesia • Shipping Worldwide
+                    </div>
+                    
+                    <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight">
+                        Premium <span class="gradient-text">Telecom</span><br>
+                        Infrastructure<br>
+                        Equipment
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed">
+                        Specialized supplier of RRU, BBU, Baseband Boards, and complete base station solutions. New & refurbished 3G, 4G LTE, and 5G equipment for operators and integrators globally.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#products" class="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-lg transition-all hover:shadow-xl hover:shadow-brand-500/25 flex items-center gap-2">
+                            Browse Products <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="px-8 py-4 border border-gray-700 hover:border-brand-500 text-gray-300 hover:text-white font-semibold rounded-lg transition-all">
+                            Request Quote
+                        </a>
+                    </div>
+
+                    <div class="flex items-center gap-6 pt-4 text-sm text-gray-500">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-brand-500"></i>
+                            <span>Global Logistics</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-brand-500"></i>
+                            <span>Quality Tested</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-brand-500"></i>
+                            <span>OEM Compatible</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative hidden lg:block">
+                    <div class="relative w-full aspect-square max-w-lg mx-auto animate-float">
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-500/20 to-indigo-500/20 rounded-3xl rotate-6"></div>
+                        <div class="absolute inset-0 bg-dark-800 rounded-3xl border border-gray-700 shadow-2xl overflow-hidden">
+                            <div class="p-8 h-full flex flex-col justify-center">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-dark-900/80 p-6 rounded-2xl border border-gray-800 hover:border-brand-500/50 transition-colors">
+                                        <i class="fas fa-satellite-dish text-3xl text-brand-400 mb-3"></i>
+                                        <h3 class="font-semibold text-white">RRU Units</h3>
+                                        <p class="text-xs text-gray-500 mt-1">Remote Radio Heads</p>
+                                    </div>
+                                    <div class="bg-dark-900/80 p-6 rounded-2xl border border-gray-800 hover:border-brand-500/50 transition-colors mt-8">
+                                        <i class="fas fa-server text-3xl text-indigo-400 mb-3"></i>
+                                        <h3 class="font-semibold text-white">BBU Systems</h3>
+                                        <p class="text-xs text-gray-500 mt-1">Baseband Units</p>
+                                    </div>
+                                    <div class="bg-dark-900/80 p-6 rounded-2xl border border-gray-800 hover:border-brand-500/50 transition-colors">
+                                        <i class="fas fa-microchip text-3xl text-purple-400 mb-3"></i>
+                                        <h3 class="font-semibold text-white">Baseband Boards</h3>
+                                        <p class="text-xs text-gray-500 mt-1">Processing Modules</p>
+                                    </div>
+                                    <div class="bg-dark-900/80 p-6 rounded-2xl border border-gray-800 hover:border-brand-500/50 transition-colors mt-8">
+                                        <i class="fas fa-bolt text-3xl text-amber-400 mb-3"></i>
+                                        <h3 class="font-semibold text-white">Power Systems</h3>
+                                        <p class="text-xs text-gray-500 mt-1">Rectifiers & PSU</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#products" class="text-gray-500 hover:text-brand-400 transition-colors">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="border-y border-gray-800 bg-dark-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="reveal">
+                    <div class="text-3xl md:text-4xl font-display font-bold text-white mb-1">50+</div>
+                    <div class="text-sm text-gray-500 uppercase tracking-wider">Countries Served</div>
+                </div>
+                <div class="reveal" style="transition-delay: 100ms;">
+                    <div class="text-3xl md:text-4xl font-display font-bold text-white mb-1">10K+</div>
+                    <div class="text-sm text-gray-500 uppercase tracking-wider">Units Delivered</div>
+                </div>
+                <div class="reveal" style="transition-delay: 200ms;">
+                    <div class="text-3xl md:text-4xl font-display font-bold text-white mb-1">99.2%</div>
+                    <div class="text-sm text-gray-500 uppercase tracking-wider">Quality Pass Rate</div>
+                </div>
+                <div class="reveal" style="transition-delay: 300ms;">
+                    <div class="text-3xl md:text-4xl font-display font-bold text-white mb-1">24/7</div>
+                    <div class="text-sm text-gray-500 uppercase tracking-wider">Technical Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="font-display text-3xl md:text-5xl font-bold mb-6">Our <span class="gradient-text">Product Range</span></h2>
+                <p class="text-gray-400 text-lg">Comprehensive telecom infrastructure equipment from leading manufacturers. All units rigorously tested and certified for global deployment.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- RRU -->
+                <div class="group relative bg-dark-800 rounded-2xl border border-gray-800 overflow-hidden card-hover reveal">
+                    <div class="h-48 bg-gradient-to-br from-brand-900/50 to-dark-900 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMTQsIDE2NSwgMjMzLCAwLjEpIi8+PC9zdmc+')] opacity-50"></div>
+                        <i class="fas fa-broadcast-tower text-6xl text-brand-500/80 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-white">Remote Radio Units (RRU)</h3>
+                            <span class="px-3 py-1 bg-brand-900/50 text-brand-300 text-xs rounded-full border border-brand-500/20">In Stock</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">Multi-band RRUs for 3G, 4G LTE, and 5G NR deployments. Compatible with Huawei, Ericsson, Nokia, and ZTE systems.</p>
+                        <ul class="space-y-2 mb-6 text-sm text-gray-500">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-500 text-xs"></i> Macro & Small Cell Options</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-500 text-xs"></i> 700MHz to 3.5GHz Bands</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-500 text-xs"></i> Massive MIMO Support</li>
+                        </ul>
+                        <button onclick="openInquiry('RRU')" class="w-full py-3 border border-gray-700 hover:border-brand-500 text-gray-300 hover:text-white rounded-lg transition-all text-sm font-medium">
+                            Request Specifications
+                        </button>
+                    </div>
+                </div>
+
+                <!-- BBU -->
+                <div class="group relative bg-dark-800 rounded-2xl border border-gray-800 overflow-hidden card-hover reveal" style="transition-delay: 100ms;">
+                    <div class="h-48 bg-gradient-to-br from-indigo-900/50 to-dark-900 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoOTksIDEwMiwgMjQxLCAwLjEpIi8+PC9zdmc+')] opacity-50"></div>
+                        <i class="fas fa-server text-6xl text-indigo-500/80 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-white">Baseband Units (BBU)</h3>
+                            <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 text-xs rounded-full border border-indigo-500/20">In Stock</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">High-capacity baseband processing units supporting multiple cells and standards. Centralized and distributed architectures available.</p>
+                        <ul class="space-y-2 mb-6 text-sm text-gray-500">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-500 text-xs"></i> Multi-Standard Support</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-500 text-xs"></i> Cloud RAN Compatible</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-500 text-xs"></i> Baseband Pooling</li>
+                        </ul>
+                        <button onclick="openInquiry('BBU')" class="w-full py-3 border border-gray-700 hover:border-indigo-500 text-gray-300 hover:text-white rounded-lg transition-all text-sm font-medium">
+                            Request Specifications
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Baseband Boards -->
+                <div class="group relative bg-dark-800 rounded-2xl border border-gray-800 overflow-hidden card-hover reveal" style="transition-delay: 200ms;">
+                    <div class="h-48 bg-gradient-to-br from-purple-900/50 to-dark-900 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMTY4LCA4NSwgMjQ3LCAwLjEpIi8+PC9zdmc+')] opacity-50"></div>
+                        <i class="fas fa-microchip text-6xl text-purple-500/80 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-white">Baseband Boards</h3>
+                            <span class="px-3 py-1 bg-purple-900/50 text-purple-300 text-xs rounded-full border border-purple-500/20">In Stock</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">Processing boards for signal modulation, coding, and protocol stack functions. Compatible with major OEM platforms.</p>
+                        <ul class="space-y-2 mb-6 text-sm text-gray-500">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-purple-500 text-xs"></i> DSP & FPGA Based</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-purple-500 text-xs"></i> Multi-Carrier Processing</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-purple-500 text-xs"></i> Hot-Swappable Design</li>
+                        </ul>
+                        <button onclick="openInquiry('Baseband Boards')" class="w-full py-3 border border-gray-700 hover:border-purple-500 text-gray-300 hover:text-white rounded-lg transition-all text-sm font-medium">
+                            Request Specifications
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Power Systems -->
+                <div class="group relative bg-dark-800 rounded-2xl border border-gray-800 overflow-hidden card-hover reveal">
+                    <div class="h-48 bg-gradient-to-br from-amber-900/50 to-dark-900 flex items-center justify-center relative overflow-hidden">
+                        <i class="fas fa-bolt text-6xl text-amber-500/80 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-white">Power & Rectifier Modules</h3>
+                            <span class="px-3 py-1 bg-amber-900/50 text-amber-300 text-xs rounded-full border border-amber-500/20">Available</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">High-efficiency rectifier modules and power supply units for telecom base stations. AC/DC conversion with remote monitoring.</p>
+                        <ul class="space-y-2 mb-6 text-sm text-gray-500">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-amber-500 text-xs"></i> 98% Efficiency Rating</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-amber-500 text-xs"></i> Smart Monitoring</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-amber-500 text-xs"></i> N+1 Redundancy</li>
+                        </ul>
+                        <button onclick="openInquiry('Power Modules')" class="w-full py-3 border border-gray-700 hover:border-amber-500 text-gray-300 hover:text-white rounded-lg transition-all text-sm font-medium">
+                            Request Specifications
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Accessories -->
+                <div class="group relative bg-dark-800 rounded-2xl border border-gray-800 overflow-hidden card-hover reveal" style="transition-delay: 100ms;">
+                    <div class="h-48 bg-gradient-to-br from-emerald-900/50 to-dark-900 flex items-center justify-center relative overflow-hidden">
+                        <i class="fas fa-tools text-6xl text-emerald-500/80 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-white">Fittings & Accessories</h3>
+                            <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 text-xs rounded-full border border-emerald-500/20">Available</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">Complete range of installation hardware, cable management, feeder clamps, and insulation materials for base station deployment.</p>
+                        <ul class="space-y-2 mb-6 text-sm text-gray-500">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500 text-xs"></i> Weatherproof Hardware</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500 text-xs"></i> Fiber Optic Cables</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500 text-xs"></i> Mounting Kits</li>
+                        </ul>
+                        <button onclick="openInquiry('Accessories')" class="w-full py-3 border border-gray-700 hover:border-emerald-500 text-gray-300 hover:text-white rounded-lg transition-all text-sm font-medium">
+                            Request Specifications
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Custom Solutions -->
+                <div class="group relative bg-dark-800 rounded-2xl border border-gray-800 overflow-hidden card-hover reveal" style="transition-delay: 200ms;">
+                    <div class="h-48 bg-gradient-to-br from-rose-900/50 to-dark-900 flex items-center justify-center relative overflow-hidden">
+                        <i class="fas fa-cogs text-6xl text-rose-500/80 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-white">Custom Solutions</h3>
+                            <span class="px-3 py-1 bg-rose-900/50 text-rose-300 text-xs rounded-full border border-rose-500/20">Project Based</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">End-to-end network deployment support including site survey, equipment configuration, integration testing, and logistics management.</p>
+                        <ul class="space-y-2 mb-6 text-sm text-gray-500">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-rose-500 text-xs"></i> Network Design</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-rose-500 text-xs"></i> System Integration</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-rose-500 text-xs"></i> Project Management</li>
+                        </ul>
+                        <button onclick="openInquiry('Custom Solutions')" class="w-full py-3 border border-gray-700 hover:border-rose-500 text-gray-300 hover:text-white rounded-lg transition-all text-sm font-medium">
+                            Discuss Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-dark-800/30 border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-brand-900/30 border border-brand-500/20 text-brand-400 text-sm font-medium mb-6">
+                        <i class="fas fa-building mr-2"></i> About RRU Trader HK
+                    </div>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">Indonesia's Trusted <span class="gradient-text">Telecom Partner</span></h2>
+                    <p class="text-gray-400 text-lg mb-6 leading-relaxed">
+                        Based in Indonesia, RRU Trader HK is a specialized global communication equipment supplier serving telecom operators, system integrators, and infrastructure providers across 50+ countries.
+                    </p>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        We focus on delivering high-quality BBU, RRU, baseband boards, rectifier modules, and power supplies. Our expertise covers new and refurbished 3G, 4G LTE, and 5G base station products, providing reliable equipment and cost-effective solutions for building modern, high-capacity networks.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-900/50 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-globe-asia text-brand-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">Strategic Location</h4>
+                                <p class="text-sm text-gray-500">Indonesia-based with logistics hubs serving Asia-Pacific, Africa, and Middle East markets efficiently.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-indigo-900/50 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-shield-alt text-indigo-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">Quality Assurance</h4>
+                                <p class="text-sm text-gray-500">Every product undergoes rigorous testing and performance verification before shipment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative reveal">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-brand-500 to-indigo-500 rounded-2xl opacity-20 blur-2xl"></div>
+                    <div class="relative bg-dark-800 rounded-2xl border border-gray-700 p-8">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center p-6 bg-dark-900 rounded-xl border border-gray-800">
+                                <i class="fas fa-headset text-3xl text-brand-400 mb-3"></i>
+                                <div class="text-2xl font-bold text-white">24/7</div>
+                                <div class="text-sm text-gray-500">Support</div>
+                            </div>
+                            <div class="text-center p-6 bg-dark-900 rounded-xl border border-gray-800">
+                                <i class="fas fa-shipping-fast text-3xl text-indigo-400 mb-3"></i>
+                                <div class="text-2xl font-bold text-white">Fast</div>
+                                <div class="text-sm text-gray-500">Global Delivery</div>
+                            </div>
+                            <div class="text-center p-6 bg-dark-900 rounded-xl border border-gray-800">
+                                <i class="fas fa-certificate text-3xl text-purple-400 mb-3"></i>
+                                <div class="text-2xl font-bold text-white">OEM</div>
+                                <div class="text-sm text-gray-500">Compatible</div>
+                            </div>
+                            <div class="text-center p-6 bg-dark-900 rounded-xl border border-gray-800">
+                                <i class="fas fa-handshake text-3xl text-emerald-400 mb-3"></i>
+                                <div class="text-2xl font-bold text-white">B2B</div>
+                                <div class="text-sm text-gray-500">Focused</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="font-display text-3xl md:text-5xl font-bold mb-6">Our <span class="gradient-text">Services</span></h2>
+                <p class="text-gray-400 text-lg">Beyond equipment supply, we provide comprehensive technical and logistical support for seamless network deployment.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-dark-800/50 rounded-2xl p-8 border border-gray-800 hover:border-brand-500/50 transition-all reveal">
+                    <div class="w-14 h-14 bg-brand-900/50 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-search-dollar text-2xl text-brand-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Equipment Sourcing</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Hard-to-find and end-of-life telecom equipment procurement. We maintain relationships with major manufacturers and recyclers to source specific part numbers.</p>
+                </div>
+
+                <div class="bg-dark-800/50 rounded-2xl p-8 border border-gray-800 hover:border-brand-500/50 transition-all reveal" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-indigo-900/50 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-2xl text-indigo-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Refurbishment</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Certified refurbishment process including component replacement, firmware updates, and full diagnostic testing to like-new condition.</p>
+                </div>
+
+                <div class="bg-dark-800/50 rounded-2xl p-8 border border-gray-800 hover:border-brand-500/50 transition-all reveal" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-purple-900/50 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-plane text-2xl text-purple-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Global Logistics</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">End-to-end international shipping with customs documentation, insurance, and tracking. We handle the complexity of cross-border telecom equipment transport.</p>
+                </div>
+
+                <div class="bg-dark-800/50 rounded-2xl p-8 border border-gray-800 hover:border-brand-500/50 transition-all reveal">
+                    <div class="w-14 h-14 bg-emerald-900/50 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-vial text-2xl text-emerald-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Testing & QA</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Every unit tested in our lab for RF performance, power efficiency, and protocol compliance before shipment with detailed test reports.</p>
+                </div>
+
+                <div class="bg-dark-800/50 rounded-2xl p-8 border border-gray-800 hover:border-brand-500/50 transition-all reveal" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-amber-900/50 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-graduation-cap text-2xl text-amber-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Technical Training</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">On-site and remote training for your engineering team on installation, configuration, and maintenance of supplied equipment.</p>
+                </div>
+
+                <div class="bg-dark-800/50 rounded-2xl p-8 border border-gray-800 hover:border-brand-500/50 transition-all reveal" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-rose-900/50 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-clipboard-check text-2xl text-rose-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Warranty Support</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Standard 12-month warranty on all equipment with extended warranty options. Spare parts availability and RMA processing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Reach -->
+    <section id="global" class="py-24 bg-dark-800/30 border-y border-gray-800 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0); background-size: 40px 40px;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 reveal">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4 mt-8">
+                            <div class="bg-dark-800 p-6 rounded-xl border border-gray-800">
+                                <i class="fas fa-flag text-brand-400 mb-2"></i>
+                                <div class="font-semibold text-white">Southeast Asia</div>
+                                <div class="text-xs text-gray-500 mt-1">Indonesia, Malaysia, Thailand, Philippines, Vietnam</div>
+                            </div>
+                            <div class="bg-dark-800 p-6 rounded-xl border border-gray-800">
+                                <i class="fas fa-flag text-indigo-400 mb-2"></i>
+                                <div class="font-semibold text-white">Middle East</div>
+                                <div class="text-xs text-gray-500 mt-1">UAE, Saudi Arabia, Qatar, Kuwait</div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-dark-800 p-6 rounded-xl border border-gray-800">
+                                <i class="fas fa-flag text-purple-400 mb-2"></i>
+                                <div class="font-semibold text-white">Africa</div>
+                                <div class="text-xs text-gray-500 mt-1">Nigeria, Kenya, Tanzania, South Africa</div>
+                            </div>
+                            <div class="bg-dark-800 p-6 rounded-xl border border-gray-800">
+                                <i class="fas fa-flag text-emerald-400 mb-2"></i>
+                                <div class="font-semibold text-white">South Asia</div>
+                                <div class="text-xs text-gray-500 mt-1">India, Bangladesh, Pakistan, Sri Lanka</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2 reveal">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-brand-900/30 border border-brand-500/20 text-brand-400 text-sm font-medium mb-6">
+                        <i class="fas fa-globe mr-2"></i> Global Presence
+                    </div>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">Serving Networks <span class="gradient-text">Worldwide</span></h2>
+                    <p class="text-gray-400 text-lg mb-6 leading-relaxed">
+                        From our base in Indonesia, we have established reliable logistics channels to serve telecom markets across Asia, Africa, the Middle East, and beyond.
+                    </p>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        We understand diverse regional network demands, regulatory standards, and power requirements. Whether you're building a new 5G network or upgrading legacy infrastructure, we ensure compliant, compatible equipment delivery.
+                    </p>
+                    
+                    <div class="flex items-center gap-4">
+                        <div class="flex -space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-brand-600 flex items-center justify-center text-xs font-bold border-2 border-dark-900">AP</div>
+                            <div class="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center text-xs font-bold border-2 border-dark-900">AF</div>
+                            <div class="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center text-xs font-bold border-2 border-dark-900">ME</div>
+                            <div class="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-xs font-bold border-2 border-dark-900">SA</div>
+                        </div>
+                        <div class="text-sm text-gray-400">
+                            <span class="text-white font-semibold">50+</span> Countries Served
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="reveal">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-brand-900/30 border border-brand-500/20 text-brand-400 text-sm font-medium mb-6">
+                        <i class="fas fa-envelope mr-2"></i> Get In Touch
+                    </div>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">Request a <span class="gradient-text">Quote</span></h2>
+                    <p class="text-gray-400 text-lg mb-8">
+                        Tell us about your project requirements. Our team will respond within 24 hours with availability, pricing, and delivery timelines.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-900/50 flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-brand-400"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500">Location</div>
+                                <div class="text-white font-medium">Jakarta, Indonesia</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-indigo-900/50 flex items-center justify-center">
+                                <i class="fas fa-envelope text-indigo-400"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500">Email</div>
+                                <div class="text-white font-medium">sales@rrutraderhk.com</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-purple-900/50 flex items-center justify-center">
+                                <i class="fab fa-whatsapp text-purple-400"></
